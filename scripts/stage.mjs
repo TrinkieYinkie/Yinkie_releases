@@ -44,7 +44,8 @@ async function server(port) {
 async function validate() {
   const html = await read('index.html');
   const css = await read('styles.css');
-  const { locales } = await import('../locales.js');
+  await import('../locales.js');
+  const locales = globalThis.YinkieLocales;
   const baseline = Object.keys(locales.en).sort();
   for (const [language, messages] of Object.entries(locales)) {
     assert.deepEqual(Object.keys(messages).sort(), baseline, 'Locale keys: ' + language);
@@ -73,7 +74,7 @@ async function validate() {
   assert.ok(!/https?:\/\/[^\s)]*fonts|@import/i.test(css), 'Fonts must stay local');
   for (const file of ['index.html', 'styles.css', 'app.js', 'locales.js']) {
     const source = await read(file);
-    assert.ok(!/[A-Z]:[\\/]|\/Users\/|\/home\/|api[_-]?key\s*[:=]|github_pat_|ghp_[A-Za-z0-9]/i.test(source), 'Public-data boundary: ' + file);
+    assert.ok(!/(?:^|[\s"'(])[A-Z]:[\\/](?!\/)|\/Users\/|\/home\/|api[_-]?key\s*[:=]|github_pat_|ghp_[A-Za-z0-9]/i.test(source), 'Public-data boundary: ' + file);
   }
   const { en, ru, es } = locales;
   assert.match(en['free.body'], /main functionality.*Desktop and Web.*remain free/);

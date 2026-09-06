@@ -38,6 +38,11 @@ async function main() {
   lock = await open(lockPath, 'wx');
   await lock.writeFile(JSON.stringify({ pid: process.pid, token, startedAt: new Date().toISOString(), mode }));
   console.log('OWNER pid=' + process.pid + ' token=' + token + ' mode=' + mode);
+  if (mode === 'preview') {
+    process.stdin.setEncoding('utf8');
+    process.stdin.on('data', (data) => { if (data.trim() === 'stop' && child?.connected) child.send('stop'); });
+    console.log('Send stop on stdin to close preview and release its lock.');
+  }
   for (const step of plans[mode]) {
     if (interrupted) throw new Error('Interrupted');
     await run(step);
@@ -48,7 +53,7 @@ async function run(step) {
   console.log('START ' + step.name + ' (deadline ' + step.timeout + 'ms)');
   const started = Date.now();
   const permissions = ['--permission', '--allow-fs-read=' + root];
-  if (step.name === 'build') permissions.push('--allow-fs-write=' + resolve(root, 'dist'));
+  if (step.name === 'build') permissions.push('--allow-fs-write=' + resolve(root, 'dist'), '--allow-fs-write=' + resolve(root, 'dist') + '/*');
   // No allow-child-process, allow-worker or addons: descendants cannot escape
   // the exact ChildProcess handle owned here. IPC closes if the owner dies.
   const owned = spawn(process.execPath, [...permissions, ...step.args], {
@@ -90,6 +95,7 @@ try {
   console.error(error.code === 'EEXIST' ? 'Another landing run owns the lock. Its lock is preserved.' : error.message);
   process.exitCode = 1;
 } finally {
+  process.stdin.pause();
   // Only this run's acquired lock may be removed; a duplicate run owns nothing.
   if (lock) {
     await lock.close();

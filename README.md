@@ -70,6 +70,16 @@ copies of your text.
   </tr>
 </table>
 
+## A useful home for AI-assisted Markdown
+
+Ask your AI assistant for a plan, research summary or documentation in Markdown.
+Save the result as a .md file and open it in Yinkie to read, revise and keep it
+alongside your own notes. On Desktop, multiple folders and documents can share
+one workspace, with tabs and two editor groups keeping references close at hand.
+
+AI generation happens in your chosen service. Yinkie works with the Markdown
+you bring into it.
+
 ## One document, two ways to think
 
 Source is never treated as a lesser mode. Yinkie is designed to preserve
@@ -171,11 +181,15 @@ Your documents are not marketing data.
 - Document text, filenames, paths and search queries do not belong in product
   analytics.
 
-The editor is free to use. Local writing and access to your own files will not
-be held behind a subscription. Optional online services — such as publishing or
-encrypted synchronization — may be offered separately in the future.
+The application and its main functionality remain free on both Desktop and Web.
+This is not a trial. Optional paid additions may appear later. Accounts,
+synchronization and other online services are not available yet; if introduced,
+they may have separate pricing without changing the free-core promise.
 
 ## Feedback
+
+Public support: **[support@yinkie.com](mailto:support@yinkie.com)**.
+
 
 Yinkie is growing in public, and thoughtful reports are especially valuable
 during the early releases.
@@ -195,8 +209,8 @@ reproduce a problem, replace it with a short fictional example first.
 
 ## About this repository
 
-This is Yinkie's public distribution repository. It contains official release
-binaries, release notes and public issue tracking. The application source code
+This is Yinkie's public distribution repository. It contains the landing page,
+official release binaries, release notes and public issue tracking. The application source code
 is maintained separately.
 
 <p align="center">
@@ -213,3 +227,8 @@ is maintained separately.
 
 [latest-release]: https://github.com/TrinkieYinkie/Yinkie_releases/releases/latest
 [new-issue]: https://github.com/TrinkieYinkie/Yinkie_releases/issues/new/choose
+
+## Landing development
+
+See [local development](docs/landing.md), the [landing plan](docs/plans/yinkie-landing.md),
+and the [screenshot brief](docs/screenshots.md).

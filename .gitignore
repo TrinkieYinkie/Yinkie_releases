@@ -1,4 +1,4 @@
-# Local source screenshots; the public README uses optimized WebP assets.
+# Raw local captures; the public page uses reviewed WebP images.
 assets/screenshots/*.png
 
 # Local landing output and lifecycle ownership

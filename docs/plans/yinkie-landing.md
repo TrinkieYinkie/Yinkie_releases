@@ -76,4 +76,7 @@ limitations honestly: new light-theme, Source+Preview and workspace-search
 captures are follow-up inputs; actual domain/release activation is separate.
 
 ## Status
-Planning complete; implementation pending.
+Implementation and local build complete. The first viewport and first story
+section now prioritize editing AI-assisted Markdown, with multiple Desktop
+folders and documents as the connected workflow. All three locales are aligned.
+See ../landing-review.md for validation evidence and remaining launch inputs.
