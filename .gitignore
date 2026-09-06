@@ -1,2 +1,6 @@
 # Local source screenshots; the public README uses optimized WebP assets.
 assets/screenshots/*.png
+
+# Local landing output and lifecycle ownership
+dist/
+.landing-*.lock
