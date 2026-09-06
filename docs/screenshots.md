@@ -39,3 +39,7 @@ account names, emails, personal file paths, private documents, notifications or
 browser profiles. The public support address may appear where appropriate.
 The strongest subject is a useful AI-assisted document being edited alongside
 notes in an ordinary multi-folder Desktop workspace.
+
+A compatibility capture would also help: show the four-profile picker and a
+clear diagnostic on a fictional Markdown document. A table under the CommonMark
+target can illustrate why destination-specific checking matters.

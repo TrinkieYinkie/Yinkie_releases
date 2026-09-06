@@ -80,3 +80,9 @@ Implementation and local build complete. The first viewport and first story
 section now prioritize editing AI-assisted Markdown, with multiple Desktop
 folders and documents as the connected workflow. All three locales are aligned.
 See ../landing-review.md for validation evidence and remaining launch inputs.
+
+## User-directed positioning refinements
+Make AI-assisted Markdown and multi-folder Desktop workspaces prominent.
+List the four supported versioned dialect/compatibility profiles and explain
+how choosing the destination editor's profile guides diagnostics without
+silent conversion or a claim of identical rendering. Implemented in all locales.

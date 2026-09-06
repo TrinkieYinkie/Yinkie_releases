@@ -278,3 +278,14 @@ details[open] .disclosure-icon { transform: rotate(45deg); }
 .step-number { color: var(--accent); font-family: ui-monospace,monospace; font-size: .875rem; margin-top: .22rem; }
 .ai-note { color: var(--muted); max-width: 82ch; font-size: .875rem; }
 @media (max-width: 58rem) { .ai-flow { grid-template-columns: 1fr; gap: 1.5rem; } }
+
+.dialect-grid { display: grid; grid-template-columns: repeat(4,minmax(0,1fr)); gap: 1rem; }
+.dialect-card { background: var(--surface); border: 1px solid var(--line); border-top: .2rem solid var(--accent); border-radius: .7rem; padding: 1.5rem; }
+.dialect-card h3 { margin-block: .7rem 1rem; }
+.dialect-card p { color: var(--muted); }
+.dialect-card .dialect-version { color: var(--accent); font-family: ui-monospace,monospace; font-size: .875rem; }
+.compatibility-example { margin-top: 2rem; border-left: .2rem solid var(--accent); padding: .2rem 0 .2rem 1.5rem; max-width: 64rem; }
+.compatibility-example p { color: var(--muted); margin-top: .7rem; }
+.dialect-note { color: var(--muted); font-size: .875rem; margin-top: 1.3rem; max-width: 85ch; }
+@media (max-width: 74rem) { .dialect-grid { grid-template-columns: repeat(2,minmax(0,1fr)); } }
+@media (max-width: 40rem) { .dialect-grid { grid-template-columns: 1fr; } }

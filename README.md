@@ -144,6 +144,24 @@ and a readable summary of what changed.
 > **System Settings → Privacy & Security**. Download Yinkie only from this
 > repository or from links on [yinkie.com](https://yinkie.com).
 
+## Choose Markdown that fits your other tools
+
+Yinkie supports these document compatibility profiles:
+
+- **Yinkie Markdown 5.0**
+- **CommonMark 0.31.2**
+- **GitHub Flavored Markdown (GFM) 0.29**
+- **GitHub repository Markdown**, reviewed 2026-08-27, for repository .md files
+
+Choose the profile your other editor or destination supports. Yinkie checks the
+document against that profile and identifies syntax/structure outside its
+contract. You can change an individual document's target or set a default for
+new files. Changing the target does not silently rewrite the document.
+
+Compatibility does not imply identical visual styling or support for every
+third-party extension. The GitHub profile covers repository Markdown files,
+not every GitHub surface.
+
 ## Markdown support
 
 Yinkie is built around portable Markdown and a conservative approach to

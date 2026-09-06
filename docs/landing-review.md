@@ -46,3 +46,11 @@ AI positioning describes an external Markdown workflow and does not claim that
 all AI responses use Markdown or that Yinkie provides an integrated AI model.
 Anthropic's primary prompting guidance documents control over Markdown output:
 https://docs.anthropic.com/en/docs/build-with-claude/prompt-engineering/prompt-templates-and-variables
+
+## Compatibility follow-up
+The landing and README list all four shipped compatibility profiles and explain
+per-document selection, defaults for new files and diagnostics. Claims were
+checked against the current production profile registry, English UI catalog and
+delivered compatibility plan, read-only. No automatic conversion, universal
+editor support or identical rendering is implied. This section replaces the
+generic introduction to prioritize the user-requested distinction.
