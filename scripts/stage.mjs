@@ -100,6 +100,9 @@ async function main() {
     assert.equal(process.permission.has('worker'), false);
     assert.throws(() => spawn(process.execPath, ['--version']), { code: 'ERR_ACCESS_DENIED' });
     console.log('Subprocesses and workers are prohibited; owner directly holds the entire child tree.');
+  } else if (mode === 'unified-analytics-test') {
+    const { runLandingAnalyticsTests } = await import('./landing-analytics.test.mjs');
+    await runLandingAnalyticsTests();
   } else if (mode === 'analytics-test') {
     const { runAnalyticsTests } = await import('./analytics.test.mjs');
     await runAnalyticsTests();

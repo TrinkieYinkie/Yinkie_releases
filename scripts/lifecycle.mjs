@@ -12,6 +12,7 @@ const syntax = (file) => ({ name: 'Syntax: ' + file, args: ['--check', resolve(r
 const stage = (name, timeout = 15000) => ({ name, args: [stagePath, name], timeout });
 const checks = [syntax('scripts/lifecycle.mjs'), syntax('scripts/stage.mjs'), syntax('app.js'), syntax('locales.js'), syntax('analytics-config.js'), syntax('analytics.js'), syntax('scripts/analytics.test.mjs'), stage('analytics-test'), stage('validate'), stage('http-check')];
 const plans = {
+  unified: [syntax('landing-analytics.js'), syntax('landing-analytics-ui.js'), stage('unified-analytics-test', 30000)],
   foundation: [syntax('scripts/lifecycle.mjs'), syntax('scripts/stage.mjs'), stage('selftest')],
   check: checks,
   build: [...checks, stage('build'), stage('output-check')],
