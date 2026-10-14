@@ -250,3 +250,8 @@ is maintained separately.
 
 See [local development](docs/landing.md), the [landing plan](docs/plans/yinkie-landing.md),
 and the [screenshot brief](docs/screenshots.md).
+
+[Landing analytics](docs/landing-analytics.md) measures page views and Desktop-link
+intent using only in-memory page IDs and closed source/campaign categories. It is
+separate from application telemetry and download counters. Production sending
+is disabled until the dedicated receiver is ready.

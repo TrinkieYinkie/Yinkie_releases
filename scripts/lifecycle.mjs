@@ -10,7 +10,7 @@ const mode = process.argv[2];
 const stagePath = resolve(root, 'scripts/stage.mjs');
 const syntax = (file) => ({ name: 'Syntax: ' + file, args: ['--check', resolve(root, file)], timeout: 10000 });
 const stage = (name, timeout = 15000) => ({ name, args: [stagePath, name], timeout });
-const checks = [syntax('scripts/lifecycle.mjs'), syntax('scripts/stage.mjs'), syntax('app.js'), syntax('locales.js'), stage('validate'), stage('http-check')];
+const checks = [syntax('scripts/lifecycle.mjs'), syntax('scripts/stage.mjs'), syntax('app.js'), syntax('locales.js'), syntax('analytics-config.js'), syntax('analytics.js'), syntax('scripts/analytics.test.mjs'), stage('analytics-test'), stage('validate'), stage('http-check')];
 const plans = {
   foundation: [syntax('scripts/lifecycle.mjs'), syntax('scripts/stage.mjs'), stage('selftest')],
   check: checks,

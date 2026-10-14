@@ -14,7 +14,7 @@
   local explicit preferences, keyboard-operable buttons and native details.
 - Existing captures have accurate captions. Source-fragment and diagram images
   are not labelled as Source Preview or workspace-search screenshots.
-- Public build uses an explicit 12-file allowlist and excludes samples, raw
+- Public build uses an explicit 14-file allowlist and excludes samples, raw
   captures, source repository metadata and development documentation.
 
 ## Evidence
@@ -40,6 +40,12 @@ No browser interaction/resizing/screenshot QA is claimed for this new landing.
   versions, platform support, online services or licensing claims.
 - A final real-browser visual/accessibility review before public launch.
 - Publishing was not part of this task; there was no push, main merge or workflow change.
+
+## Anonymous analytics follow-up
+The client, closed attribution catalog and download-intent/outbound instrumentation
+are implemented with no persistent visitor ID. Production sending remains disabled
+pending a separate landing receiver in Telemetry. See [the contract](landing-analytics.md)
+and [wire fixture](analytics-contract-v1.json). Existing download counts remain separate.
 
 ## Wording reference
 AI positioning describes an external Markdown workflow and does not claim that

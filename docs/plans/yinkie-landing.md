@@ -42,7 +42,9 @@ Markdown editor. Continue through portable files, real Desktop workspaces,
 safe Source preservation, rich documents, Desktop/Web choice, the free-core
 promise and concise FAQ. Use actual captures with accurate captions, without
 synthetic app UI or repainted themes. Screenshots are already public demo files.
-All imagery, fonts and scripts load locally. No analytics, trackers or forms.
+All imagery, fonts and scripts load locally. The initial version had no analytics,
+trackers or forms. The user-requested anonymous analytics follow-up is scoped in
+landing-analytics.md; no forms or third-party analytics SDKs are added.
 
 ## Edge cases and regressions
 - Preserve the pre-existing sample edit exactly and exclude it from commits.

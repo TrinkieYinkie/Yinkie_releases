@@ -1,0 +1,60 @@
+{
+  "schemaVersion": 1,
+  "contractVersion": 1,
+  "events": [
+    {
+      "eventId": "10000000-0000-4000-8000-000000000001",
+      "eventName": "landing_page_viewed",
+      "eventVersion": 1,
+      "pageViewId": "20000000-0000-4000-8000-000000000001",
+      "sequence": 1,
+      "siteVersion": "1.0.0",
+      "page": "home",
+      "locale": "en",
+      "occurredAt": "2026-10-14T12:00:00.000Z",
+      "attribution": {
+        "source": "github",
+        "utmSource": "github",
+        "utmMedium": "referral",
+        "utmCampaign": "launch"
+      },
+      "properties": {}
+    },
+    {
+      "eventId": "10000000-0000-4000-8000-000000000002",
+      "eventName": "landing_download_clicked",
+      "eventVersion": 1,
+      "pageViewId": "20000000-0000-4000-8000-000000000001",
+      "sequence": 2,
+      "siteVersion": "1.0.0",
+      "page": "home",
+      "locale": "en",
+      "occurredAt": "2026-10-14T12:00:05.000Z",
+      "attribution": {
+        "source": "github",
+        "utmSource": "github",
+        "utmMedium": "referral",
+        "utmCampaign": "launch"
+      },
+      "properties": { "placement": "final" }
+    },
+    {
+      "eventId": "10000000-0000-4000-8000-000000000003",
+      "eventName": "landing_download_outbound_clicked",
+      "eventVersion": 1,
+      "pageViewId": "20000000-0000-4000-8000-000000000001",
+      "sequence": 3,
+      "siteVersion": "1.0.0",
+      "page": "home",
+      "locale": "en",
+      "occurredAt": "2026-10-14T12:00:05.000Z",
+      "attribution": {
+        "source": "github",
+        "utmSource": "github",
+        "utmMedium": "referral",
+        "utmCampaign": "launch"
+      },
+      "properties": { "placement": "final", "destination": "github_releases" }
+    }
+  ]
+}

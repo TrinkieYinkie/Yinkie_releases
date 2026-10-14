@@ -26,6 +26,8 @@
   <link rel="stylesheet" href="styles.css"/>
   <script defer src="locales.js"></script>
   <script defer src="app.js"></script>
+  <script defer src="analytics-config.js"></script>
+  <script defer src="analytics.js"></script>
 </head>
 <body>
   <a class="skip-link" href="#main"><span data-i18n="nav.skip">Skip to content</span></a>
@@ -54,7 +56,7 @@
         <p data-i18n="hero.eyebrow" class="eyebrow">THE FREE VISUAL MARKDOWN EDITOR</p>
         <h1 id="hero-title"><span data-i18n="hero.title">Room for your thoughts.</span> <span data-i18n="hero.accent" class="accent">Freedom for your files.</span></h1>
         <p data-i18n="hero.body" class="lede">Turn your notes and AI drafts into documents you enjoy working with. Edit visually, switch to Markdown when you need precision, and keep files you can take anywhere.</p>
-        <div class="actions"><a class="button primary" href="https://yinkie.app"><span data-i18n="action.web">Open web editor</span><span aria-hidden="true">↗</span></a><a class="button secondary" href="#platforms"><span data-i18n="action.desktop">Get Yinkie Desktop</span><span aria-hidden="true">↓</span></a></div>
+        <div class="actions"><a class="button primary" href="https://yinkie.app"><span data-i18n="action.web">Open web editor</span><span aria-hidden="true">↗</span></a><a class="button secondary" href="#platforms" data-analytics-download="section" data-analytics-placement="hero"><span data-i18n="action.desktop">Get Yinkie Desktop</span><span aria-hidden="true">↓</span></a></div>
         <div class="free-promise"><span aria-hidden="true" class="check">✓</span><div><strong data-i18n="hero.free">The core stays free. On Desktop and Web.</strong><span data-i18n="hero.note">Optional paid extras may come later.</span></div></div>
       </div>
       <figure class="hero-media">
@@ -105,7 +107,7 @@
             <div class="platform-top"><span class="platform-symbol" aria-hidden="true"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M3 7V5h6l3 3h9v12H3z"/></svg></span><span class="domain">Desktop</span></div>
             <h3>Yinkie Desktop</h3><p data-i18n="platform.desktop.body" class="platform-description">For your everyday collection of notes, files and folders.</p>
             <ul class="check-list"><li data-i18n="platform.desktop.one">Named workspaces, folders and workspace search</li><li data-i18n="platform.desktop.two">Native file saving and external-change handling</li><li data-i18n="platform.desktop.three">Local version history and recovery</li></ul>
-            <a class="button secondary" href="https://github.com/TrinkieYinkie/Yinkie_releases/releases"><span data-i18n="action.releases">View desktop releases</span><span aria-hidden="true">↗</span></a><p data-i18n="platform.desktop.note" class="platform-note">Available builds and platform details are listed on the official releases page.</p>
+            <a class="button secondary" href="https://github.com/TrinkieYinkie/Yinkie_releases/releases" data-analytics-download="github_releases" data-analytics-placement="platforms"><span data-i18n="action.releases">View desktop releases</span><span aria-hidden="true">↗</span></a><p data-i18n="platform.desktop.note" class="platform-note">Available builds and platform details are listed on the official releases page.</p>
           </article>
           <article class="platform-card web-card">
             <div class="platform-top"><span class="platform-symbol" aria-hidden="true"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M14 3H6a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z M14 3v6h6 M8 13h8 M8 17h5"/></svg></span><span class="domain">yinkie.app</span></div>
@@ -131,17 +133,18 @@
 <details><summary><span data-i18n="faq.four.q">Are Desktop and Web identical?</span><span class="disclosure-icon" aria-hidden="true">+</span></summary><p data-i18n="faq.four.a">They share the core editor. Desktop adds native workspaces, workspace search, local history and file observation. Web works within browser file permissions and provides browser-local recovery.</p></details>
 <details><summary><span data-i18n="faq.five.q">Where can I send feedback?</span><span class="disclosure-icon" aria-hidden="true">+</span></summary><p data-i18n="faq.five.a">Write to support@yinkie.com or use the public GitHub issues. When sharing an example or screenshot publicly, use fictional content and remove personal information.</p></details></div>
     </section>
-    <section class="final-section" aria-labelledby="final-title"><div class="wrap section"><img src="assets/yinkie-icon.png" width="52" height="52" alt=""/><h2 data-i18n="final.title" id="final-title">Make space for your next idea.</h2><p data-i18n="final.body" class="lede">Start with a document. Keep the freedom of Markdown.</p><div class="actions"><a class="button primary" href="https://yinkie.app"><span data-i18n="action.web">Open web editor</span><span aria-hidden="true">↗</span></a><a class="button secondary" href="https://github.com/TrinkieYinkie/Yinkie_releases/releases"><span data-i18n="action.desktop">Get Yinkie Desktop</span><span aria-hidden="true">↗</span></a></div></div></section>
+    <section class="final-section" aria-labelledby="final-title"><div class="wrap section"><img src="assets/yinkie-icon.png" width="52" height="52" alt=""/><h2 data-i18n="final.title" id="final-title">Make space for your next idea.</h2><p data-i18n="final.body" class="lede">Start with a document. Keep the freedom of Markdown.</p><div class="actions"><a class="button primary" href="https://yinkie.app"><span data-i18n="action.web">Open web editor</span><span aria-hidden="true">↗</span></a><a class="button secondary" href="https://github.com/TrinkieYinkie/Yinkie_releases/releases" data-analytics-download="github_releases" data-analytics-placement="final"><span data-i18n="action.desktop">Get Yinkie Desktop</span><span aria-hidden="true">↗</span></a></div></div></section>
   </main>
   <footer class="site-footer wrap">
     <div class="footer-top"><div><a class="brand" href="#top"><img src="assets/yinkie-icon.png" width="32" height="32" alt=""/>Yinkie</a><p data-i18n="footer.tagline">A calm place for your Markdown.</p></div>
       <nav aria-label="Yinkie links">
-        <a href="https://github.com/TrinkieYinkie/Yinkie_releases/releases"><span data-i18n="footer.releases">Desktop releases</span></a>
+        <a href="https://github.com/TrinkieYinkie/Yinkie_releases/releases" data-analytics-download="github_releases" data-analytics-placement="footer"><span data-i18n="footer.releases">Desktop releases</span></a>
         <a href="https://github.com/TrinkieYinkie/Yinkie_releases"><span data-i18n="footer.github">Public repository</span></a>
         <a href="mailto:support@yinkie.com">support@yinkie.com <span aria-hidden="true">↗</span></a>
       </nav>
     </div>
     <div class="footer-bottom"><span>© 2026 Yinkie</span><p data-i18n="footer.note">Core editing stays free. Optional paid additions may follow.</p></div>
+    <p class="analytics-note" data-i18n="privacy.analytics">Site statistics cover page views, Desktop-link clicks and source/campaign categories. No analytics cookies or persistent visitor ID; browser privacy signals are respected.</p>
   </footer>
 </body>
 </html>

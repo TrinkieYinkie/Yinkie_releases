@@ -12,7 +12,7 @@ let stop = () => {};
 let finished = false;
 process.on('disconnect', () => { if (!finished) { stop(); process.exit(1); } });
 const publicFiles = [
-  'index.html', 'styles.css', 'app.js', 'locales.js',
+  'index.html', 'styles.css', 'app.js', 'locales.js', 'analytics-config.js', 'analytics.js',
   'CNAME', '.nojekyll', 'robots.txt', 'sitemap.xml',
   'assets/yinkie-icon.png', 'assets/screenshots/yinkie-hero.webp',
   'assets/screenshots/yinkie-source-preview.webp',
@@ -72,10 +72,20 @@ async function validate() {
   assert.ok(css.includes('scrollbar-thumb:active'));
   assert.ok(!/<select\b/i.test(html), 'No unthemed native picker');
   assert.ok(!/https?:\/\/[^\s)]*fonts|@import/i.test(css), 'Fonts must stay local');
-  for (const file of ['index.html', 'styles.css', 'app.js', 'locales.js']) {
+  for (const file of ['index.html', 'styles.css', 'app.js', 'locales.js', 'analytics-config.js', 'analytics.js']) {
     const source = await read(file);
     assert.ok(!/(?:^|[\s"'(])[A-Z]:[\\/](?!\/)|\/Users\/|\/home\/|api[_-]?key\s*[:=]|github_pat_|ghp_[A-Za-z0-9]/i.test(source), 'Public-data boundary: ' + file);
   }
+  const tracked = [...html.matchAll(/<a\b[^>]*data-analytics-download="([^"]+)"[^>]*data-analytics-placement="([^"]+)"[^>]*>/g)];
+  assert.deepEqual(tracked.map(match => [match[1], match[2]]), [
+    ['section', 'hero'], ['github_releases', 'platforms'],
+    ['github_releases', 'final'], ['github_releases', 'footer'],
+  ], 'Reviewed download controls must remain instrumented exactly once');
+  for (const match of tracked) {
+    const expected = match[1] === 'section' ? '#platforms' : 'https://github.com/TrinkieYinkie/Yinkie_releases/releases';
+    assert.ok(match[0].includes('href="' + expected + '"'), 'Unexpected analytics destination');
+  }
+  assert.ok(html.includes('src="analytics-config.js"') && html.includes('src="analytics.js"'));
   const { en, ru, es } = locales;
   assert.match(en['free.body'], /main functionality.*Desktop and Web.*remain free/);
   assert.match(en['free.future'], /not available yet/);
@@ -90,6 +100,9 @@ async function main() {
     assert.equal(process.permission.has('worker'), false);
     assert.throws(() => spawn(process.execPath, ['--version']), { code: 'ERR_ACCESS_DENIED' });
     console.log('Subprocesses and workers are prohibited; owner directly holds the entire child tree.');
+  } else if (mode === 'analytics-test') {
+    const { runAnalyticsTests } = await import('./analytics.test.mjs');
+    await runAnalyticsTests();
   } else if (mode === 'validate') {
     await validate();
   } else if (mode === 'build') {
@@ -117,7 +130,7 @@ async function main() {
     const instance = await server(0);
     const origin = 'http://127.0.0.1:' + instance.address().port;
     try {
-      for (const file of ['/', '/styles.css', '/app.js', '/locales.js', '/assets/screenshots/yinkie-hero.webp']) {
+      for (const file of ['/', '/styles.css', '/app.js', '/locales.js', '/analytics-config.js', '/analytics.js', '/assets/screenshots/yinkie-hero.webp']) {
         const response = await fetch(origin + file, { signal: AbortSignal.timeout(3000) });
         assert.equal(response.status, 200, file);
         await response.arrayBuffer();
