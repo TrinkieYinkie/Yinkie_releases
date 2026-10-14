@@ -79,7 +79,6 @@ globalThis.YinkieLocales = {
     "faq.five.a": "Write to support@yinkie.com or use the public GitHub issues. When sharing an example or screenshot publicly, use fictional content and remove personal information.",
     "final.title": "Make space for your next idea.",
     "final.body": "Start with a document. Keep the freedom of Markdown.",
-    "privacy.analytics": "Site statistics cover page views, Desktop-link clicks and source/campaign categories. No analytics cookies or persistent visitor ID; browser privacy signals are respected.",
     "footer.tagline": "A calm place for your Markdown.",
     "footer.releases": "Desktop releases",
     "footer.github": "Public repository",
@@ -109,7 +108,17 @@ globalThis.YinkieLocales = {
     "dialect.github.version": "Reviewed 2026-08-27",
     "dialect.example.title": "One document, more places to use it",
     "dialect.example.body": "Keep an AI-assisted draft, a README and your personal notes in the profiles their destinations support. You can change a document's target or set a default for new files. Changing the profile does not silently rewrite your text.",
-    "dialect.note": "Compatibility covers the selected Markdown syntax and structure. Appearance and editor-specific extensions can still differ."
+    "dialect.note": "Compatibility covers the selected Markdown syntax and structure. Appearance and editor-specific extensions can still differ.",
+    "statistics.short": "Website statistics and opt-out",
+    "statistics.title": "Website statistics",
+    "statistics.description": "When enabled, statistics measure page views, link clicks and source/campaign categories. A temporary ID connects events only within one opening of this page; there is no persistent visitor ID or analytics cookie.",
+    "statistics.details": "Only your opt-out choice is saved in this browser. It has no expiry. Opting out stops future sending and pending retries; it does not erase events already accepted by the server. These statistics are separate from app usage and download counts.",
+    "statistics.unavailable": "Collection is not enabled on this site yet. You can save your opt-out now.",
+    "statistics.active": "Statistics are on. Events are connected only within this page opening.",
+    "statistics.excluded": "This page will not send statistics. Your choice is remembered when browser storage is available.",
+    "statistics.browser": "Statistics are off because your browser requests privacy.",
+    "statistics.storage": "Statistics are off because your saved preference cannot be read.",
+    "statistics.exclude": "Exclude my visits"
   },
   "ru": {
     "meta.title": "Yinkie — бесплатный визуальный Markdown-редактор",
@@ -191,7 +200,6 @@ globalThis.YinkieLocales = {
     "faq.five.a": "Напишите на support@yinkie.com или в публичные issues на GitHub. Для публичных примеров и скриншотов используйте вымышленные данные и убирайте личную информацию.",
     "final.title": "Освободите место для следующей идеи.",
     "final.body": "Начните с документа. Сохраните свободу Markdown.",
-    "privacy.analytics": "Статистика сайта учитывает просмотры, клики по ссылкам Desktop и категории источников/кампаний. Без аналитических cookies и постоянного ID посетителя; сигналы приватности браузера учитываются.",
     "footer.tagline": "Спокойное место для вашего Markdown.",
     "footer.releases": "Релизы десктопа",
     "footer.github": "Публичный репозиторий",
@@ -221,7 +229,17 @@ globalThis.YinkieLocales = {
     "dialect.github.version": "Профиль от 27.08.2026",
     "dialect.example.title": "Один документ — больше возможностей использовать его",
     "dialect.example.body": "Используйте для черновика из ИИ, README и личных заметок профили, которые подходят месту их дальнейшего использования. Цель совместимости можно изменить у документа или задать по умолчанию для новых файлов. Смена профиля не переписывает текст без вашего ведома.",
-    "dialect.note": "Совместимость относится к выбранному синтаксису и структуре Markdown. Внешний вид и расширения конкретного редактора могут отличаться."
+    "dialect.note": "Совместимость относится к выбранному синтаксису и структуре Markdown. Внешний вид и расширения конкретного редактора могут отличаться.",
+    "statistics.short": "Статистика сайта и отключение сбора",
+    "statistics.title": "Статистика сайта",
+    "statistics.description": "Когда сбор включён, статистика учитывает просмотры страницы, нажатия на ссылки и категории источников и кампаний. Временный ID связывает события только в пределах одного открытия страницы; постоянного ID посетителя и cookies аналитики нет.",
+    "statistics.details": "В браузере сохраняется только отказ от сбора, без срока истечения. Отказ останавливает будущую отправку и ожидающие повторы, но не удаляет события, уже принятые сервером. Эта статистика отделена от использования приложения и счётчиков скачиваний.",
+    "statistics.unavailable": "Сбор на этом сайте пока не включён. Уже сейчас можно сохранить отказ.",
+    "statistics.active": "Статистика включена. События связываются только в пределах текущего открытия страницы.",
+    "statistics.excluded": "Эта страница не будет отправлять статистику. Выбор сохраняется, когда доступно хранилище браузера.",
+    "statistics.browser": "Статистика отключена согласно настройкам приватности браузера.",
+    "statistics.storage": "Статистика отключена: не удалось прочитать сохранённый выбор.",
+    "statistics.exclude": "Не учитывать мои посещения"
   },
   "es": {
     "meta.title": "Yinkie — Editor visual de Markdown gratuito",
@@ -303,7 +321,6 @@ globalThis.YinkieLocales = {
     "faq.five.a": "Escribe a support@yinkie.com o usa las incidencias públicas de GitHub. Si compartes un ejemplo o captura públicamente, usa contenido ficticio y elimina la información personal.",
     "final.title": "Haz espacio para tu próxima idea.",
     "final.body": "Empieza con un documento. Conserva la libertad de Markdown.",
-    "privacy.analytics": "Las estadísticas del sitio abarcan visitas, clics en enlaces de Desktop y categorías de origen/campaña. Sin cookies analíticas ni identificador persistente; se respetan las señales de privacidad del navegador.",
     "footer.tagline": "Un lugar tranquilo para tu Markdown.",
     "footer.releases": "Versiones de escritorio",
     "footer.github": "Repositorio público",
@@ -333,6 +350,16 @@ globalThis.YinkieLocales = {
     "dialect.github.version": "Revisado el 27-08-2026",
     "dialect.example.title": "Un documento, más lugares donde usarlo",
     "dialect.example.body": "Usa en un borrador de IA, un README y tus notas los perfiles que admita su destino. Puedes cambiar el perfil de un documento o definir uno predeterminado para los archivos nuevos. Cambiar de perfil no reescribe el texto de forma silenciosa.",
-    "dialect.note": "La compatibilidad se refiere a la sintaxis y estructura Markdown elegidas. La apariencia y las extensiones de cada editor pueden variar."
+    "dialect.note": "La compatibilidad se refiere a la sintaxis y estructura Markdown elegidas. La apariencia y las extensiones de cada editor pueden variar.",
+    "statistics.short": "Estadísticas del sitio y exclusión",
+    "statistics.title": "Estadísticas del sitio",
+    "statistics.description": "Cuando están activadas, las estadísticas miden visitas, clics y categorías de origen y campaña. Un ID temporal relaciona los eventos solo durante una apertura de esta página; no hay ID persistente de visitante ni cookies de analítica.",
+    "statistics.details": "Solo se guarda en este navegador tu preferencia de exclusión, sin caducidad. La exclusión detiene los envíos futuros y los reintentos pendientes; no borra eventos ya aceptados por el servidor. Estas estadísticas son independientes del uso de la aplicación y de los recuentos de descargas.",
+    "statistics.unavailable": "La recopilación aún no está activada en este sitio. Puedes guardar tu exclusión ahora.",
+    "statistics.active": "Las estadísticas están activadas. Los eventos solo se relacionan durante esta apertura de la página.",
+    "statistics.excluded": "Esta página no enviará estadísticas. Tu elección se guarda cuando el almacenamiento del navegador está disponible.",
+    "statistics.browser": "Las estadísticas están desactivadas por la preferencia de privacidad de tu navegador.",
+    "statistics.storage": "Las estadísticas están desactivadas porque no se pudo leer la preferencia guardada.",
+    "statistics.exclude": "Excluir mis visitas"
   }
 };

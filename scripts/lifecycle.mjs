@@ -10,7 +10,7 @@ const mode = process.argv[2];
 const stagePath = resolve(root, 'scripts/stage.mjs');
 const syntax = (file) => ({ name: 'Syntax: ' + file, args: ['--check', resolve(root, file)], timeout: 10000 });
 const stage = (name, timeout = 15000) => ({ name, args: [stagePath, name], timeout });
-const checks = [syntax('scripts/lifecycle.mjs'), syntax('scripts/stage.mjs'), syntax('app.js'), syntax('locales.js'), syntax('analytics-config.js'), syntax('analytics.js'), syntax('scripts/analytics.test.mjs'), stage('analytics-test'), stage('validate'), stage('http-check')];
+const checks = [syntax('scripts/lifecycle.mjs'), syntax('scripts/stage.mjs'), syntax('app.js'), syntax('locales.js'), syntax('landing-analytics-config.js'), syntax('landing-analytics.js'), syntax('landing-analytics-ui.js'), syntax('analytics.js'), syntax('scripts/landing-analytics.test.mjs'), stage('unified-analytics-test', 30000), stage('landing-page-test'), stage('validate'), stage('http-check')];
 const plans = {
   unified: [syntax('landing-analytics.js'), syntax('landing-analytics-ui.js'), stage('unified-analytics-test', 30000)],
   foundation: [syntax('scripts/lifecycle.mjs'), syntax('scripts/stage.mjs'), stage('selftest')],
@@ -34,7 +34,7 @@ async function main() {
       return;
     }
   }
-  if (!plans[mode]) throw new Error('Usage: node scripts/lifecycle.mjs foundation|check|build|preview|audit');
+  if (!plans[mode]) throw new Error('Usage: node scripts/lifecycle.mjs foundation|unified|check|build|preview|audit');
   if (Number(process.versions.node.split('.')[0]) < 24) throw new Error('Node 24 or newer is required for restricted child execution.');
   lock = await open(lockPath, 'wx');
   await lock.writeFile(JSON.stringify({ pid: process.pid, token, startedAt: new Date().toISOString(), mode }));

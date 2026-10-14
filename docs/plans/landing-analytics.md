@@ -1,3 +1,5 @@
+> Historical v1 implementation. Superseded by [the unified v2 plan](unified-landing-analytics.md) and [contract](../contracts/landing-analytics-v2.md). The old envelope and delivery behavior are not current.
+
 # Landing analytics implementation plan
 
 ## Scope and behavior
