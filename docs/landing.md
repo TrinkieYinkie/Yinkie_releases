@@ -28,7 +28,7 @@ Locale selection follows an explicit local preference, then browser languages,
 then English. Theme follows the system until the visitor selects a preference.
 The static English page remains readable without JavaScript.
 
-Anonymous landing analytics is documented in [landing-analytics.md](landing-analytics.md).
+Optional landing statistics is documented in [landing-analytics.md](landing-analytics.md).
 The client has no persistent visitor identity; production sending remains disabled
 until its separate receiver is available. The bounded checks include behavioral
 analytics tests and exact download-link markers. Public output now contains 16 files.
@@ -37,4 +37,4 @@ Publishing and DNS configuration are separate, explicitly authorized work.
 CNAME and canonical metadata describe the intended yinkie.com destination;
 they do not configure DNS or assert that either domain is live.
 
-Both sites use the shared v2 client and contract. The Website statistics panel stores only a persistent opt-out flag; page/event IDs remain in memory. `node scripts/lifecycle.mjs unified` runs focused fake-transport checks.
+Both sites use the shared v2 client and explicit-consent popup. The browser stores a category choice for 180 days; page/event IDs remain in memory. `node scripts/lifecycle.mjs unified` runs focused fake-transport checks.
