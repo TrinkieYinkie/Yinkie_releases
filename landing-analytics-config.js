@@ -1,7 +1,8 @@
-// Public reviewed configuration. Enable only after the shared v2 receiver and release gates are ready.
+// Release configuration: explicit visitor consent and exact production origin remain mandatory.
+// Publish only together with a verified, enabled v2 receiver; see docs/release-readiness.md.
 export const landingAnalyticsConfig = Object.freeze({
-  "enabled": false,
-  "siteVersion": "1.0.0",
+  "enabled": true,
+  "siteVersion": "1.1.0",
   "origin": "https://yinkie.com",
   "endpoint": "https://telemetry.yinkie.com/api/telemetry/landing/events",
   "preferenceKey": "yinkie.websiteStatistics",

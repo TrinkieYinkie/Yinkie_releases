@@ -29,8 +29,9 @@ then English. Theme follows the system until the visitor selects a preference.
 The static English page remains readable without JavaScript.
 
 Optional landing statistics is documented in [landing-analytics.md](landing-analytics.md).
-The client has no persistent visitor identity; production sending remains disabled
-until its separate receiver is available. The bounded checks include behavioral
+The client has no persistent visitor identity; release configuration enables sending only after
+explicit consent at the production origin. Verify the receiver before publishing; see
+[release readiness](release-readiness.md). The bounded checks include behavioral
 analytics tests and exact download-link markers. Public output now contains 16 files.
 
 Publishing and DNS configuration are separate, explicitly authorized work.

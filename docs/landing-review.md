@@ -1,5 +1,9 @@
 # Landing review
 
+Current release evidence is in [release-readiness.md](release-readiness.md). The original
+review below is historical; its disabled-v1 and missing-browser-QA statements were superseded
+by the v2 consent work on 2026-10-18. Original screenshot/product launch inputs remain separate.
+
 ## Delivered
 - Local static landing for yinkie.com; Web calls to action go to yinkie.app.
 - Desktop calls to action use the confirmed origin repository's /releases page.
