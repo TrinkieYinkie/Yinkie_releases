@@ -1,0 +1,201 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<meta name="referrer" content="no-referrer" />
+		<title>Yinkie Privacy Policy — version 2</title>
+		<link rel="canonical" href="https://yinkie.com/legal/privacy-v2.html" />
+		<link rel="stylesheet" href="./legal.css" />
+	</head>
+	<body>
+		<header class="site-header">
+			<a class="brand" href="https://yinkie.com/" aria-label="Yinkie home">Yinkie</a
+			><span>Your words. Your files.</span>
+		</header>
+		<main>
+			<nav aria-label="Legal documents">
+				<a href="./terms-v2.html">Terms</a>
+				<a href="./privacy-v2.html" aria-current="page">Privacy</a>
+				<a href="./telemetry-data-v2.html">Analytics data inventory</a>
+			</nav>
+			<p class="eyebrow">The details, in plain sight</p>
+			<h1>Yinkie Privacy Policy</h1>
+			<p class="document-meta"><strong>Version 2 · 19 October 2026</strong></p>
+			<div class="notice">
+				Your documents stay yours. Product analytics is optional and off until you
+				explicitly enable it. You can keep editing without agreeing and change your choice
+				in Settings → Privacy.
+			</div>
+
+			<h2>Who is responsible and how to contact us</h2>
+			<p>
+				Yinkie is maintained by Alisa Petrova (Петрова Алиса), an individual based in
+				Georgia, who is responsible for the processing described here. Yinkie is not
+				currently operated by a company and has no payment service. For privacy, access or
+				deletion requests, contact
+				<a href="mailto:support@yinkie.com">support@yinkie.com</a>.
+			</p>
+
+			<h2>Your documents and local application data</h2>
+			<p>
+				Yinkie edits local Markdown files. It stores settings, workspace references,
+				recovery drafts and saved-version history locally as needed for its features. The
+				editor has no account or cloud document-sync service. Optional analytics does not
+				include document text, filenames, paths, search or replacement text, clipboard
+				contents, image bytes, document links, raw errors or stack traces. It does not use
+				device fingerprints or arbitrary metadata.
+			</p>
+			<p>
+				A remote image is requested from its host only after its separate per-image
+				permission. That host necessarily receives the connection information. Analytics
+				consent does not grant permission to load remote images.
+			</p>
+
+			<h2>Optional product analytics and its purpose</h2>
+			<p>
+				The basis for optional analytics is your consent. It helps understand use of
+				features, activity and coarse reliability outcomes. No analytics identity,
+				pre-consent event buffer or analytics request is created before you enable it.
+				Declining does not restrict editing. Accepting the Terms is not analytics consent.
+				Metrics describe consenting installations or browser contexts, not numbers of
+				people.
+			</p>
+			<p>
+				Events include random installation, session and event identifiers; event name and
+				version; application version; UTC occurrence time; distribution, Desktop/Web target,
+				coarse platform family and interface language; and a closed set of operation
+				categories. These describe facts such as a save outcome, editing mode or first use
+				of a feature, with coarse duration/count buckets where applicable. The
+				<a href="./telemetry-data-v2.html">complete data inventory</a> lists every event and
+				its permitted fields. An update event records the application version observed after
+				an update, not your interaction with GitHub's download page.
+			</p>
+			<p>
+				These data are pseudonymous, not guaranteed anonymous. The server retains the random
+				identifiers with events, so events from the same installation can be associated.
+				Desktop and Web identifiers are independent. No name, email, account, advertising ID
+				or device fingerprint is added to the event stream. A random local deletion secret
+				authenticates ingest and deletion; the server uses keyed HMAC fingerprints for
+				credential checks, rather than storing that secret in event data.
+			</p>
+
+			<h2>Consent, withdrawal, reset and deletion</h2>
+			<p>
+				Use Settings → Privacy to change your choice. Disabling analytics stops future
+				collection and sends, clears queued events and keeps a dormant identifier and
+				deletion credential. A request already sent cannot be recalled. Re-enabling may
+				reuse that identifier; it does not backfill activity while analytics was off. Reset,
+				while enabled, queues deletion for the old identifier and creates an unrelated one.
+				A material Privacy Policy version change stops collection until you make a new
+				choice under the updated notice.
+			</p>
+			<p>
+				“Delete collected analytics data” disables collection and queues an authenticated
+				deletion request. While offline or during a service outage, that request waits
+				locally and retries with bounded delays. Completion is shown only after a server
+				acknowledgement. Authentication or configuration errors can require attention. Keep
+				the app and its local data until the request completes: clearing browser site data
+				or application data can remove a pending deletion credential. Contact support if
+				this happens; we may be unable to identify your records without it. Do not email
+				deletion secrets or private documents.
+			</p>
+
+			<h2>Hosting, recipients and network information</h2>
+			<p>
+				The service endpoint is <code>https://telemetry.yinkie.com</code>. The maintainer
+				operates the shared Telemetry service with a separate Yinkie database and access
+				roles. Hosting is provided by Hetzner Online GmbH; the selected server location is
+				Nuremberg, Germany. The operator administers the service from Georgia. There is no
+				third-party advertising or product-analytics provider. Reports are restricted to the
+				operator; no public cohort dashboard is offered. Cohort-size suppression is not part
+				of this version.
+			</p>
+			<p>
+				Telemetry requests use HTTPS and omit cookies and referrers. The service is
+				configured not to store source IP addresses or User-Agent strings in telemetry or
+				application/HTTP access logs. Reverse-proxy access logs are disabled in the reviewed
+				configuration, and identifying proxy headers are removed before the API. Network
+				operators and hosting infrastructure still process IP addresses to deliver traffic;
+				administrative/security logs have a separate purpose. This is not a claim that IP
+				addresses are never processed anywhere.
+			</p>
+
+			<h2>Retention and backup limitations</h2>
+			<ul>
+				<li>Local event queue: at most 500 events, expiring after 30 days.</li>
+				<li>Product telemetry events: configured retention of 90 days.</li>
+				<li>Deletion tombstones and encrypted deletion journal: maximum 120 days.</li>
+				<li>
+					Encrypted logical and operator-held backup copies: target retention of 30 days.
+				</li>
+			</ul>
+			<p>
+				Live metrics are computed from retained events; there is no separate 24-month
+				aggregate history. Successful deletion removes the installation's active raw events
+				and therefore its contribution to later live queries. Protected deletion records
+				help reject later events and replay deletions after restoration. Deletion does not
+				promise immediate physical erasure from every existing backup.
+			</p>
+			<p>
+				The planned backup method uses encrypted server backups and periodic encrypted
+				operator copies, without another cloud backup provider. Backup creation, transfer
+				and isolated restoration have not yet been verified for this deployment. Copies are
+				not continuously replicated. After total server loss, recovery is limited to the
+				last verified copy; deletions accepted after that copy may be absent from its
+				deletion journal. We do not promise a 15-minute recovery point or an absolute
+				guarantee against that restoration risk. The location and applicable safeguards for
+				operator copies have not yet been confirmed. This notice will be updated when those
+				arrangements are established.
+			</p>
+
+			<h2>Update checks, website analytics and support</h2>
+			<p>
+				Desktop update checks are separate from consent analytics. Automatic checks start
+				after an initial delay of at least 30 seconds and normally repeat every six hours,
+				with longer delays after rate limits. Automatic and manual checks contact the public
+				GitHub Releases API for
+				<code>TrinkieYinkie/Yinkie_releases</code>. GitHub receives the connection IP and a
+				generic Yinkie User-Agent, without an analytics identifier, document information or
+				locale. Checks only offer a notification and a link; Yinkie does not silently
+				download or install an update. Opening that link or downloading an installer is also
+				subject to
+				<a
+					href="https://docs.github.com/en/site-policy/privacy-policies/github-general-privacy-statement"
+					>GitHub's privacy statement</a
+				>.
+			</p>
+			<p>
+				The landing page at <code>yinkie.com</code> and editor at <code>yinkie.app</code>
+				are different services. This editor's consent does not enable landing analytics.
+				Landing collection and collection of public GitHub download counters are currently
+				disabled on the telemetry service. A website click is not a confirmed download, and
+				a public download counter is not an installation or a person.
+			</p>
+			<p>
+				If you contact support, your message and return address are used to respond to your
+				request, separately from product telemetry. Avoid sending sensitive content. Support
+				correspondence is not covered by the telemetry retention schedule above.
+			</p>
+
+			<h2>Your rights and policy changes</h2>
+			<p>
+				Depending on applicable law, you may request information, access, correction,
+				deletion, restriction or portability, object to applicable processing, withdraw
+				consent, and complain to the competent data-protection authority or a court.
+				Withdrawal does not undo processing already carried out. Contact
+				<a href="mailto:support@yinkie.com">support@yinkie.com</a>; we will explain any
+				identity-verification limitation for pseudonymous records. Yinkie does not use these
+				events for automated decisions with legal or similarly significant effects.
+			</p>
+			<p>
+				Changes to purpose, data categories, recipients, retention or deletion require a new
+				versioned notice and renewed analytics consent.
+			</p>
+		</main>
+		<footer class="site-footer">
+			<p>Yinkie · Documents &amp; privacy</p>
+			<a href="mailto:support@yinkie.com">support@yinkie.com</a>
+		</footer>
+	</body>
+</html>

@@ -1,0 +1,288 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<meta name="referrer" content="no-referrer" />
+		<title>Yinkie analytics data inventory — Privacy Policy version 2</title>
+		<link rel="canonical" href="https://yinkie.com/legal/telemetry-data-v2.html" />
+		<link rel="stylesheet" href="./legal.css" />
+	</head>
+	<body>
+		<header class="site-header">
+			<a class="brand" href="https://yinkie.com/" aria-label="Yinkie home">Yinkie</a
+			><span>Your words. Your files.</span>
+		</header>
+		<main class="inventory">
+			<nav aria-label="Legal documents">
+				<a href="./terms-v2.html">Terms</a>
+				<a href="./privacy-v2.html">Privacy</a>
+				<a href="./telemetry-data-v2.html" aria-current="page">Analytics data inventory</a>
+			</nav>
+			<p class="eyebrow">The details, in plain sight</p>
+			<h1>Yinkie analytics data inventory</h1>
+			<p class="document-meta">
+				<strong>Contract version 1 · Privacy Policy version 2 · 19 October 2026</strong>
+			</p>
+			<p>
+				Analytics is optional and requires explicit consent. This inventory describes every
+				permitted event; no document contents, filenames or paths are included.
+			</p>
+			<p>
+				This is the complete event-name and event-property inventory. All fields are closed
+				allowlists: an unknown field, value, version or target combination is rejected
+				before storage.
+			</p>
+
+			<h2>Fields on every event</h2>
+			<p>
+				<code>eventId</code>, <code>eventName</code>, <code>eventVersion</code>, random
+				<code>installationId</code>, random <code>sessionId</code>, application version,
+				<code>target</code>, <code>distribution</code>, coarse <code>platformFamily</code>,
+				interface <code>locale</code>, UTC occurrence time and the exact property object
+				listed below. These random identifiers are pseudonymous and can associate events
+				from the same installation. They are not guaranteed anonymous.
+			</p>
+			<p>
+				The authenticated batch contains exactly <code>schemaVersion: 1</code>,
+				<code>contractVersion: 1</code>, <code>deletionSecret</code> and
+				<code>events</code>. Contract version belongs to the batch, not individual wire
+				events. The separate deletion request contains only <code>installationId</code> and
+				<code>deletionSecret</code>. The secret is not an event property or renderer-visible
+				value. Server-side HMAC fingerprints protect credential checks; event identifiers
+				remain stored with events.
+			</p>
+
+			<h2>Event catalog</h2>
+			<div
+				class="table-scroll"
+				tabindex="0"
+				role="region"
+				aria-label="Analytics event catalog"
+			>
+				<table>
+					<thead>
+						<tr>
+							<th>Event v1</th>
+							<th>Targets</th>
+							<th>Properties</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr
+							data-event="app_session_started"
+							data-targets="desktop,web"
+							data-properties=""
+						>
+							<td><code>app_session_started</code></td>
+							<td>Desktop, Web</td>
+							<td>None</td>
+						</tr>
+						<tr data-event="app_updated" data-targets="desktop,web" data-properties="">
+							<td><code>app_updated</code></td>
+							<td>Desktop, Web</td>
+							<td>None</td>
+						</tr>
+						<tr
+							data-event="document_create_completed"
+							data-targets="desktop,web"
+							data-properties="createTarget,compatibilityTarget,operationOutcome,errorCategory"
+						>
+							<td><code>document_create_completed</code></td>
+							<td>Desktop, Web</td>
+							<td>
+								<code>createTarget</code>, <code>compatibilityTarget</code>,
+								<code>operationOutcome</code>, optional <code>errorCategory</code>
+							</td>
+						</tr>
+						<tr
+							data-event="resource_open_completed"
+							data-targets="desktop,web"
+							data-properties="openSource,operationOutcome,itemCountBucket,durationBucket,errorCategory"
+						>
+							<td><code>resource_open_completed</code></td>
+							<td>Desktop, Web</td>
+							<td>
+								<code>openSource</code>, <code>operationOutcome</code>,
+								<code>itemCountBucket</code>, <code>durationBucket</code>, optional
+								<code>errorCategory</code>
+							</td>
+						</tr>
+						<tr
+							data-event="meaningful_edit_completed"
+							data-targets="desktop,web"
+							data-properties="editorMode"
+						>
+							<td><code>meaningful_edit_completed</code></td>
+							<td>Desktop, Web</td>
+							<td><code>editorMode</code></td>
+						</tr>
+						<tr
+							data-event="document_save_completed"
+							data-targets="desktop,web"
+							data-properties="saveTrigger,operationOutcome,durationBucket,errorCategory"
+						>
+							<td><code>document_save_completed</code></td>
+							<td>Desktop, Web</td>
+							<td>
+								<code>saveTrigger</code>, <code>operationOutcome</code>,
+								<code>durationBucket</code>, optional <code>errorCategory</code>
+							</td>
+						</tr>
+						<tr
+							data-event="visual_mode_request_completed"
+							data-targets="desktop,web"
+							data-properties="visualOutcome,compatibilityLevel,errorCategory"
+						>
+							<td><code>visual_mode_request_completed</code></td>
+							<td>Desktop, Web</td>
+							<td>
+								<code>visualOutcome</code>, <code>compatibilityLevel</code>,
+								optional
+								<code>errorCategory</code>
+							</td>
+						</tr>
+						<tr
+							data-event="feature_first_used"
+							data-targets="desktop,web"
+							data-properties="featureId"
+						>
+							<td><code>feature_first_used</code></td>
+							<td>Desktop, Web</td>
+							<td><code>featureId</code></td>
+						</tr>
+						<tr
+							data-event="external_attention_required"
+							data-targets="desktop"
+							data-properties="externalKind,dirtyState"
+						>
+							<td><code>external_attention_required</code></td>
+							<td>Desktop</td>
+							<td><code>externalKind</code>, <code>dirtyState</code></td>
+						</tr>
+						<tr
+							data-event="external_resolution_completed"
+							data-targets="desktop"
+							data-properties="externalAction,operationOutcome,errorCategory"
+						>
+							<td><code>external_resolution_completed</code></td>
+							<td>Desktop</td>
+							<td>
+								<code>externalAction</code>, <code>operationOutcome</code>, optional
+								<code>errorCategory</code>
+							</td>
+						</tr>
+						<tr
+							data-event="recovery_action_completed"
+							data-targets="desktop,web"
+							data-properties="recoverySource,recoveryAction,operationOutcome,errorCategory"
+						>
+							<td><code>recovery_action_completed</code></td>
+							<td>Desktop, Web</td>
+							<td>
+								<code>recoverySource</code>, <code>recoveryAction</code>,
+								<code>operationOutcome</code>, optional <code>errorCategory</code>
+							</td>
+						</tr>
+						<tr
+							data-event="desktop_acquisition_viewed"
+							data-targets="web"
+							data-properties=""
+						>
+							<td><code>desktop_acquisition_viewed</code></td>
+							<td>Web</td>
+							<td>None</td>
+						</tr>
+						<tr
+							data-event="desktop_acquisition_opened"
+							data-targets="web"
+							data-properties=""
+						>
+							<td><code>desktop_acquisition_opened</code></td>
+							<td>Web</td>
+							<td>None</td>
+						</tr>
+						<tr
+							data-event="local_image_import_completed"
+							data-targets="desktop"
+							data-properties="imageInputSource,imageImportOutcome,errorCategory"
+						>
+							<td><code>local_image_import_completed</code></td>
+							<td>Desktop</td>
+							<td>
+								<code>imageInputSource</code>, <code>imageImportOutcome</code>,
+								optional
+								<code>errorCategory</code>
+							</td>
+						</tr>
+						<tr
+							data-event="workspace_replace_completed"
+							data-targets="desktop"
+							data-properties="operationOutcome,itemCountBucket,resultCountBucket,durationBucket,errorCategory"
+						>
+							<td><code>workspace_replace_completed</code></td>
+							<td>Desktop</td>
+							<td>
+								<code>operationOutcome</code>, <code>itemCountBucket</code>,
+								<code>resultCountBucket</code>, <code>durationBucket</code>,
+								optional
+								<code>errorCategory</code>
+							</td>
+						</tr>
+						<tr
+							data-event="app_shutdown_completed"
+							data-targets="desktop"
+							data-properties=""
+						>
+							<td><code>app_shutdown_completed</code></td>
+							<td>Desktop</td>
+							<td>None</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+			<p class="table-hint">
+				On a narrow screen, scroll the table sideways to read every column.
+			</p>
+
+			<h2>Closed dimensions</h2>
+			<ul>
+				<li>target: <code>desktop</code>, <code>web</code>;</li>
+				<li>distribution: <code>desktop-direct</code>, <code>web-free</code>;</li>
+				<li>
+					platform family: <code>windows</code>, <code>macos</code>, <code>linux</code>,
+					<code>browser</code>;
+				</li>
+				<li>interface locale: <code>en</code>, <code>ru</code>, <code>es</code>;</li>
+				<li>durations and counts: fixed coarse buckets only;</li>
+				<li>outcomes, errors, features and operation sources: fixed enumerations only.</li>
+			</ul>
+
+			<h2>Never collected by analytics</h2>
+			<p>
+				Document or Markdown content; document, file, folder, workspace, project, recovery
+				or asset names and paths; search or replacement text; clipboard content; image bytes
+				or URLs; headings, links or diagram source; internal resource identifiers or stable
+				hashes; account, email or payment data; IP address or user agent; cookie or
+				advertising identifier; precise OS or browser version; screen, font or device
+				fingerprint; error message, stack, cause or arbitrary metadata.
+			</p>
+
+			<h2>Retention and deletion</h2>
+			<p>
+				The local queue holds at most 500 events for 30 days. The service is configured for
+				90 days of raw events and a 120-day maximum for deletion records. Encrypted backups
+				have a target retention of 30 days, but backup transfer and restoration are not yet
+				verified. Successful authenticated deletion removes active raw rows; later live
+				metric queries stop including that installation. It does not erase every backup
+				immediately. See the <a href="./privacy-v2.html">Privacy Policy</a> for the
+				periodic-copy restore risk, offline deletion and network information. Contact
+				<a href="mailto:support@yinkie.com">support@yinkie.com</a> for questions.
+			</p>
+		</main>
+		<footer class="site-footer">
+			<p>Yinkie · Documents &amp; privacy</p>
+			<a href="mailto:support@yinkie.com">support@yinkie.com</a>
+		</footer>
+	</body>
+</html>

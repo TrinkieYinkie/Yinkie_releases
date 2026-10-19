@@ -14,6 +14,7 @@ process.on('disconnect', () => { if (!finished) { stop(); process.exit(1); } });
 const publicFiles = [
   'index.html', 'styles.css', 'app.js', 'locales.js', 'landing-analytics-config.js', 'landing-analytics.js', 'landing-analytics-ui.js', 'analytics.js',
   'CNAME', '.nojekyll', 'robots.txt', 'sitemap.xml',
+  'legal/legal.css', 'legal/privacy-v2.html', 'legal/terms-v2.html', 'legal/telemetry-data-v2.html',
   'assets/yinkie-icon.png', 'assets/screenshots/yinkie-hero.webp',
   'assets/screenshots/yinkie-source-preview.webp',
   'assets/screenshots/yinkie-workspace-search.webp',
@@ -63,6 +64,16 @@ async function validate() {
     await readFile(resolve(root, asset[1]));
   }
   for (const file of publicFiles) await readFile(resolve(root, file));
+  for (const file of publicFiles.filter(file => file.startsWith('legal/') && file.endsWith('.html'))) {
+    const document = await read(file);
+    assert.ok(document.includes('https://yinkie.com/' + file), 'Legal canonical: ' + file);
+    assert.ok(!/<script\b|(?:src|href)=["']file:/iu.test(document), 'Legal pages stay static: ' + file);
+    for (const link of document.matchAll(/(?:href|src)="([^"]+)"/g)) {
+      if (/^(https:|mailto:|#)/u.test(link[1])) continue;
+      const target = new URL(link[1], 'https://yinkie.com/' + file);
+      assert.ok(target.origin === 'https://yinkie.com' && publicFiles.includes(target.pathname.slice(1)), 'Legal asset/link: ' + link[1]);
+    }
+  }
   for (const landmark of ['<header', '<main', '<footer', '<h1']) assert.ok(html.includes(landmark));
   assert.equal((html.match(/<h1\b/g) || []).length, 1);
   assert.ok(html.includes('https://yinkie.com/'));
@@ -124,7 +135,7 @@ async function main() {
     const instance = await server(0);
     const origin = 'http://127.0.0.1:' + instance.address().port;
     try {
-      for (const file of ['/', '/styles.css', '/app.js', '/locales.js', '/landing-analytics-config.js', '/landing-analytics.js', '/landing-analytics-ui.js', '/analytics.js', '/assets/screenshots/yinkie-hero.webp']) {
+      for (const file of ['/', '/styles.css', '/app.js', '/locales.js', '/landing-analytics-config.js', '/landing-analytics.js', '/landing-analytics-ui.js', '/analytics.js', '/assets/screenshots/yinkie-hero.webp', '/legal/legal.css', '/legal/privacy-v2.html', '/legal/terms-v2.html', '/legal/telemetry-data-v2.html']) {
         const response = await fetch(origin + file, { signal: AbortSignal.timeout(3000) });
         assert.equal(response.status, 200, file);
         await response.arrayBuffer();
