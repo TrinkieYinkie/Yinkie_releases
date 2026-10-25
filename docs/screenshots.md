@@ -1,45 +1,34 @@
-# Landing screenshot brief
+# Public demo screenshots
 
-## Current public assets
-All three reviewed WebP captures show the dark Desktop theme and fictional sample
-documents. No visible private names, absolute file paths, contact details or
-credentials were found in these captures.
+Twelve user-supplied PNG captures were converted sequentially to lossless WebP
+at their original dimensions. Decoded RGB pixels match the originals exactly.
+The landing uses the real light capture for its light theme and the real dark
+capture for its dark theme. System preference, the manual toggle and stored
+preference share that selection. README uses only the six dark captures.
 
-- yinkie-hero.webp: two stacked editor groups and the workspace sidebar.
-- yinkie-source-preview.webp: the Visual editor with a protected Source fragment;
-  it is not a Source + Preview capture.
-- yinkie-workspace-search.webp: a Mermaid diagram and TypeScript code;
-  it is not a search capture. Its fictional diagram describes synchronization
-  in a different app. The landing explicitly distinguishes that from Yinkie.
+| Scene | Files (under assets/screenshots/) | Placement |
+| --- | --- | --- |
+| Writing | yinkie-writing-light.webp / yinkie-writing-dark.webp | Hero |
+| Two documents | yinkie-split-editing-light.webp / yinkie-split-editing-dark.webp | Desktop workspace |
+| Source + Preview | yinkie-source-preview-light.webp / yinkie-source-preview-dark.webp | Markdown and Mermaid |
+| Rich document | yinkie-rich-document-light.webp / yinkie-rich-document-dark.webp | Chart image and Markdown table |
+| Search | yinkie-workspace-search-light.webp / yinkie-workspace-search-dark.webp | Workspace search and document Find/Replace |
+| History | yinkie-history-light.webp / yinkie-history-dark.webp | Saved local versions |
 
-Use these files as reviewed assets; do not reinterpret their filenames as proof
-of a feature. Do not recolor or generate an imitation light-theme app capture.
+The captures contain fictional demonstration documents. The research chart is
+an embedded image with invented measurements, not an analytics feature or an
+efficiency claim. Atlas describes a fictional service. Its diagram is not a
+Yinkie publishing service. The two-document scene is two editor groups; the
+Mermaid scene is Source with read-only Preview of one document.
 
-## Next captures, in priority order
-1. **Current Desktop workspaces:** two or three expanded folders, several open
-   files and two editor groups. Use neutral folders such as Notes, Research and
-   Drafts, with a short AI-assisted plan beside reference notes. Show the current
-   workspace controls. Capture the same scene in both light and dark themes.
-2. **Actual Source + Preview:** one clean Markdown document with headings,
-   a list, table and a short code block, with the source and rendered preview
-   visible together. Light theme is particularly useful.
-3. **Workspace search:** an actual query and readable results across multiple
-   folders, alongside the chosen document. Avoid empty states and warnings.
-4. Optional: a clean light-theme Visual document for the first viewport, and a
-   Web capture using the same sample to demonstrate the browser edition.
+The research captures show part of the chart and the full table; captions do
+not imply that the complete chart is visible. The supplied search captures
+include an inactive Document unavailable tab, and the light capture contains
+a Previous match tooltip. They are preserved as supplied, not retouched.
 
-A consistent window around 1800 x 1200 or 1920 x 1200 works well. Prefer PNG
-source captures at comfortable text scale; keep the entire application window,
-without browser/system desktop clutter or tooltips covering useful content.
-Save source PNG files in the ignored screenshots folder and review before
-converting to public WebP.
+Full-size links use the currently selected theme. Below-the-fold images are
+lazy-loaded. Original PNG files and local source paths are not public assets.
+The three earlier WebP assets remain available for existing external links but
+are no longer used by the landing or README.
 
-Use only fictional content intended for publication. Do not capture real
-account names, emails, personal file paths, private documents, notifications or
-browser profiles. The public support address may appear where appropriate.
-The strongest subject is a useful AI-assisted document being edited alongside
-notes in an ordinary multi-folder Desktop workspace.
-
-A compatibility capture would also help: show the four-profile picker and a
-clear diagnostic on a fictional Markdown document. A table under the CommonMark
-target can illustrate why destination-specific checking matters.
+Conversion totals: 9,098,315 PNG bytes → 3,599,566 lossless WebP bytes (60.4% smaller).

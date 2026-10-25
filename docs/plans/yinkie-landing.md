@@ -5,17 +5,23 @@ Build a local, standalone static landing page for yinkie.com in this public
 distribution repository. WritersStudio is a read-only visual reference:
 confident sans-serif headings, coral-backed real app captures, alternating
 light and dark sections, progressive feature storytelling, direct product
-actions and a clear free/optional-paid boundary. Keep Yinkie's graphite/ember
+actions and a clear beta-access and activation-key model. Keep Yinkie's graphite/ember
 identity and document-oriented positioning. Do not copy WritersStudio product
 claims, project model, cloud promises or personal information.
 
 ## Product contract
 - yinkie.com is the landing page; yinkie.app is the browser editor.
 - support@yinkie.com is the public support address.
-- The core application and main functionality remain free on Desktop and Web.
-- Optional paid extras may follow. Accounts, synchronization and other online
-  services are not currently available; do not rule them out or promise they
-  will be free. Do not imply a delivery date or guarantee encryption.
+- Beta participants will be able to leave an email address and receive an
+  activation code for selected additional features at no charge. Do not advertise
+  the whole current application or all future Desktop features as free.
+- After beta, a base edition and paid activation keys for additional features
+  are planned. Prices belong in Pricing once payments are connected; do not invent
+  prices, workspace limits, key duration or already-working enrollment.
+- The maintainer may change features available without payment in each update,
+  subject to applicable law and existing paid-license rights.
+- Accounts, synchronization and other online services are not currently available;
+  do not promise their availability, price or delivery date.
 - Plain Markdown, Visual and Source, Source Preview, tables, lists, footnotes,
   tabs and split editing are shared capabilities.
 - Named multi-root workspaces, workspace search, native file observation and
@@ -33,14 +39,13 @@ claims, project model, cloud promises or personal information.
    static preview/build/check entry points. Integrate after verification.
 2. feature/yinkie-landing-page: complete responsive page, EN/RU/ES content,
    light/dark themes, existing screenshots, honest platform comparison,
-   free-core statement, support links and FAQ. Verify and integrate.
+   beta-access and licensing statement, support links and FAQ. Verify and integrate.
 3. Review combined changes and record remaining screenshot/launch inputs.
 
 ## Visual and content plan
 A spacious headline and an ember-backed screenshot introduce the visual
 Markdown editor. Continue through portable files, real Desktop workspaces,
-safe Source preservation, rich documents, Desktop/Web choice, the free-core
-promise and concise FAQ. Use actual captures with accurate captions, without
+safe Source preservation, rich documents, Desktop/Web choice, beta access and activation keys and concise FAQ. Use actual captures with accurate captions, without
 synthetic app UI or repainted themes. Screenshots are already public demo files.
 All imagery, fonts and scripts load locally. The initial version had no analytics,
 trackers or forms. The user-requested anonymous analytics follow-up is scoped in
@@ -74,8 +79,7 @@ Audit ownership/locks immediately after every commit before any next action.
 Complete local site in the task branch, task changes committed, existing sample
 change preserved, bounded validation/build passed, public output excludes
 private/development files, no owned processes or locks left behind. Record
-limitations honestly: new light-theme, Source+Preview and workspace-search
-captures are follow-up inputs; actual domain/release activation is separate.
+limitations honestly: light/dark demo captures were supplied in the October 25 follow-up; actual domain/release activation is separate.
 
 ## Status
 Implementation and local build complete. The first viewport and first story

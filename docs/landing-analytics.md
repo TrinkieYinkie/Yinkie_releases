@@ -15,7 +15,7 @@ expire within 90 days. App telemetry and GitHub cumulative download counts remai
 
 The popup lists the collected categories and common metadata. It does not promise absolute
 anonymity: temporary identifiers link same-page events and infrastructure receives connection
-metadata. A free personal project is not by itself proof of exemption from privacy obligations.
+metadata. An independently maintained personal project is not by itself proof of exemption from privacy obligations.
 The jurisdiction and actual hosting configuration must be assessed before deployment. References:
 [CNIL audience measurement](https://www.cnil.fr/fr/node/677) and
 [EDPB consent-banner report](https://www.edpb.europa.eu/system/files/2023-01/edpb_20230118_report_cookie_banner_taskforce_en.pdf).

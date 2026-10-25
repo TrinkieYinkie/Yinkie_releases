@@ -38,12 +38,22 @@ function setLanguage(locale) {
   }
 }
 
+function syncScreenshots(dark) {
+  for (const source of document.querySelectorAll('[data-theme-source]')) {
+    source.media = dark ? 'all' : 'not all';
+  }
+  for (const link of document.querySelectorAll('[data-shot-light]')) {
+    link.href = dark ? link.dataset.shotDark : link.dataset.shotLight;
+  }
+}
+
 function syncTheme() {
   const selected = storage.get('yinkie-site-theme');
   const explicit = selected === 'light' || selected === 'dark';
   if (explicit) root.dataset.theme = selected;
   else delete root.dataset.theme;
   const dark = explicit ? selected === 'dark' : systemTheme.matches;
+  syncScreenshots(dark);
   themeButton.setAttribute('aria-pressed', String(dark));
   document.querySelector('meta[name="theme-color"]').setAttribute('content', dark ? '#191a1e' : '#f6f5f2');
 }
@@ -58,6 +68,7 @@ themeButton.addEventListener('click', () => {
   const next = themeButton.getAttribute('aria-pressed') === 'true' ? 'light' : 'dark';
   // Apply immediately even when storage is unavailable.
   root.dataset.theme = next;
+  syncScreenshots(next === 'dark');
   themeButton.setAttribute('aria-pressed', String(next === 'dark'));
   document.querySelector('meta[name="theme-color"]').setAttribute('content', next === 'dark' ? '#191a1e' : '#f6f5f2');
   storage.set('yinkie-site-theme', next);

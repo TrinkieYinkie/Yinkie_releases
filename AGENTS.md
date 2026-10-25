@@ -8,10 +8,16 @@ or internal application source. Use only reviewed public demonstration assets.
 - Landing: https://yinkie.com
 - Web application: https://yinkie.app
 - Public support: support@yinkie.com
-- The core application and main functionality on both Web and Desktop remain free.
-- Future optional paid extras are allowed. Accounts, synchronization and other
-  online services do not exist yet; never promise they cannot appear or must
-  be free, and never imply a release date.
+- Beta participants will be able to leave an email address and receive an
+  activation code for selected additional features at no charge. Do not advertise
+  the whole current application or all future Desktop features as free.
+- After beta, a base edition and paid activation keys for additional features
+  are planned. Prices belong in Pricing once payments are connected; do not invent
+  prices, workspace limits, key duration or already-working enrollment.
+- The maintainer may change features available without payment in each update,
+  subject to applicable law and existing paid-license rights.
+- Accounts, synchronization and other online services are not currently available;
+  do not promise their availability, price or delivery date.
 - Keep Desktop and Web capability differences explicit.
 - A public release repository alone does not establish the app source license.
 

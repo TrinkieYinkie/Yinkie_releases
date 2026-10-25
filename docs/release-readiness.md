@@ -26,7 +26,7 @@ CORS, absence of sensitive access logs, raw retention and a backup/restore rehea
 consented synthetic journey at the real origin and verify durable acceptance without recording
 request bodies or identifiers. GitHub acquisition has its own worker flag and schedule gates.
 
-The operator is an individual publishing a free project. That alone does not establish exemption
+The operator is an individual publishing an independently maintained project. That alone does not establish exemption
 from data-protection law. Confirm controller/jurisdiction information and actual hosting before
 public activation; this UI change is not a legal certification. If the receiver is unavailable,
 site navigation and downloads continue; delivery is bounded and no persistent queue is created.

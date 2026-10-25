@@ -32,7 +32,8 @@ Optional landing statistics is documented in [landing-analytics.md](landing-anal
 The client has no persistent visitor identity; release configuration enables sending only after
 explicit consent at the production origin. Verify the receiver before publishing; see
 [release readiness](release-readiness.md). The bounded checks include behavioral
-analytics tests and exact download-link markers. Public output now contains 20 files, including the four versioned legal assets.
+analytics tests and exact download-link markers. Public output includes twelve additional themed WebP captures and Terms v3.
+The earlier images and Terms v2 remain available for existing links.
 
 Publishing and DNS configuration are separate, explicitly authorized work.
 CNAME and canonical metadata describe the intended yinkie.com destination;

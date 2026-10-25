@@ -18,7 +18,7 @@ reads, requests or replay. Filter categories before producing events and cancel 
 when preferences change, including other tabs. A click without a view stays a click; do not infer
 visits. Explain common metadata, 90-day raw retention and infrastructure connection metadata.
 Do not promise absolute anonymity or blanket legal compliance. The operator is an individual
-publishing a free personal project; jurisdiction remains unspecified.
+publishing an independently maintained personal project; jurisdiction remains unspecified.
 
 Verify malformed/expired choices, partial consent, legacy records, blocked storage, cross-tab
 withdrawal, retries, visibility, BFCache and exact v2 compatibility. Keep shared files identical.

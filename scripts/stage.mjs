@@ -14,10 +14,22 @@ process.on('disconnect', () => { if (!finished) { stop(); process.exit(1); } });
 const publicFiles = [
   'index.html', 'styles.css', 'app.js', 'locales.js', 'landing-analytics-config.js', 'landing-analytics.js', 'landing-analytics-ui.js', 'analytics.js',
   'CNAME', '.nojekyll', 'robots.txt', 'sitemap.xml',
-  'legal/legal.css', 'legal/privacy-v2.html', 'legal/terms-v2.html', 'legal/telemetry-data-v2.html',
+  'legal/legal.css', 'legal/privacy-v2.html', 'legal/terms-v2.html', 'legal/terms-v3.html', 'legal/telemetry-data-v2.html',
   'assets/yinkie-icon.png', 'assets/screenshots/yinkie-hero.webp',
   'assets/screenshots/yinkie-source-preview.webp',
   'assets/screenshots/yinkie-workspace-search.webp',
+  'assets/screenshots/yinkie-writing-dark.webp',
+  'assets/screenshots/yinkie-writing-light.webp',
+  'assets/screenshots/yinkie-source-preview-light.webp',
+  'assets/screenshots/yinkie-source-preview-dark.webp',
+  'assets/screenshots/yinkie-split-editing-dark.webp',
+  'assets/screenshots/yinkie-split-editing-light.webp',
+  'assets/screenshots/yinkie-rich-document-light.webp',
+  'assets/screenshots/yinkie-rich-document-dark.webp',
+  'assets/screenshots/yinkie-history-dark.webp',
+  'assets/screenshots/yinkie-history-light.webp',
+  'assets/screenshots/yinkie-workspace-search-light.webp',
+  'assets/screenshots/yinkie-workspace-search-dark.webp',
 ];
 const types = { '.html': 'text/html; charset=utf-8', '.css': 'text/css; charset=utf-8', '.js': 'text/javascript; charset=utf-8', '.png': 'image/png', '.webp': 'image/webp', '.xml': 'application/xml', '.txt': 'text/plain' };
 const read = (file) => readFile(resolve(root, file), 'utf8');
@@ -58,7 +70,7 @@ async function validate() {
   const ids = [...html.matchAll(/\bid="([^"]+)"/g)].map((match) => match[1]);
   assert.equal(ids.length, new Set(ids).size, 'Duplicate IDs');
   for (const anchor of html.matchAll(/href="#([^"]+)"/g)) assert.ok(ids.includes(anchor[1]), 'Missing anchor ' + anchor[1]);
-  for (const asset of html.matchAll(/(?:src|href)="([^"#]+)"/g)) {
+  for (const asset of html.matchAll(/(?:src|srcset|href)="([^"#]+)"/g)) {
     if (/^(https:|mailto:)/.test(asset[1])) continue;
     assert.ok(publicFiles.includes(asset[1]), 'Unexpected public reference: ' + asset[1]);
     await readFile(resolve(root, asset[1]));
@@ -89,10 +101,11 @@ async function validate() {
   }
   assert.ok(html.includes('type="module" src="analytics.js"'));
   const { en, ru, es } = locales;
-  assert.match(en['free.body'], /main functionality.*Desktop and Web.*remain free/);
-  assert.match(en['free.future'], /not available yet/);
-  assert.match(ru['free.future'], /пока нет/);
-  assert.match(es['free.future'], /todavía no/);
+  assert.match(en['pricing.body'], /email address.*activation code.*at no charge/);
+  assert.match(en['pricing.future'], /once payments are connected/);
+  assert.match(ru['pricing.future'], /после подключения оплаты/);
+  assert.match(es['pricing.future'], /una vez habilitados los pagos/);
+  assert.ok(!/stays free|remain free|always-free|free-core/iu.test(html + JSON.stringify(locales)));
   console.log('Validated locales, product contract, assets, anchors, metadata and public-data rules.');
 }
 
@@ -135,7 +148,7 @@ async function main() {
     const instance = await server(0);
     const origin = 'http://127.0.0.1:' + instance.address().port;
     try {
-      for (const file of ['/', '/styles.css', '/app.js', '/locales.js', '/landing-analytics-config.js', '/landing-analytics.js', '/landing-analytics-ui.js', '/analytics.js', '/assets/screenshots/yinkie-hero.webp', '/legal/legal.css', '/legal/privacy-v2.html', '/legal/terms-v2.html', '/legal/telemetry-data-v2.html']) {
+      for (const file of ['/', '/styles.css', '/app.js', '/locales.js', '/landing-analytics-config.js', '/landing-analytics.js', '/landing-analytics-ui.js', '/analytics.js', '/assets/screenshots/yinkie-hero.webp', '/legal/legal.css', '/legal/privacy-v2.html', '/legal/terms-v2.html', '/legal/terms-v3.html', '/legal/telemetry-data-v2.html']) {
         const response = await fetch(origin + file, { signal: AbortSignal.timeout(3000) });
         assert.equal(response.status, 200, file);
         await response.arrayBuffer();

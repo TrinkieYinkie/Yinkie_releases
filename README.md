@@ -22,14 +22,13 @@
 </p>
 
 <p align="center">
-  <img alt="Free editor" src="https://img.shields.io/badge/editor-free-C24F2C?style=flat-square">
   <img alt="Local-first" src="https://img.shields.io/badge/local--first-383B42?style=flat-square">
   <img alt="Plain Markdown" src="https://img.shields.io/badge/format-plain%20Markdown-6B625B?style=flat-square">
   <img alt="No account required" src="https://img.shields.io/badge/account-not%20required-4E6A58?style=flat-square">
 </p>
 
 <p align="center">
-  <img src="./assets/screenshots/yinkie-hero.webp" width="100%" alt="Yinkie Desktop workspace with two editor groups">
+  <img src="./assets/screenshots/yinkie-writing-dark.webp" width="100%" alt="The City at Blue Hour essay in the Yinkie Desktop Visual editor, with the demo folder tree.">
 </p>
 
 ## Markdown, without the markup getting in your way
@@ -88,7 +87,7 @@ discarding it. When a fragment cannot be interpreted safely, it stays visible
 and points back to the exact Source that owns it.
 
 <p align="center">
-  <img src="./assets/screenshots/yinkie-source-preview.webp" width="100%" alt="Yinkie preserving a Source-owned fragment beside rich visual Markdown">
+  <img src="./assets/screenshots/yinkie-source-preview-dark.webp" width="100%" alt="Mermaid sequence-diagram code in Source beside the rendered A publish request section in Preview.">
 </p>
 
 ## More than a single-file editor
@@ -104,7 +103,31 @@ fences render as bounded previews, while code remains readable and close to its
 plain Markdown source.
 
 <p align="center">
-  <img src="./assets/screenshots/yinkie-workspace-search.webp" width="100%" alt="A Mermaid sequence diagram and TypeScript code in Yinkie Desktop">
+  <img src="./assets/screenshots/yinkie-split-editing-dark.webp" width="100%" alt="Two Yinkie Desktop editor groups showing a checklist, code and an API reference side by side.">
+</p>
+
+## Rich documents
+
+Keep local images, tables, code and your notes in one portable Markdown file.
+
+<p align="center">
+  <img src="./assets/screenshots/yinkie-rich-document-dark.webp" width="100%" alt="The Attention Lab demo document with a local chart image and a table of illustrative research results.">
+</p>
+
+## Find the words you remember
+
+Search your Desktop workspace, then use Find/Replace inside the document.
+
+<p align="center">
+  <img src="./assets/screenshots/yinkie-workspace-search-dark.webp" width="100%" alt="Yinkie Desktop workspace search results for con alongside highlighted matches and document Find/Replace in an equipment checklist.">
+</p>
+
+## Revisit a saved version
+
+Read earlier local versions and compare them with the current file before restoring.
+
+<p align="center">
+  <img src="./assets/screenshots/yinkie-history-dark.webp" width="100%" alt="Yinkie Desktop History with three saved versions and a read-only preview of The City at Blue Hour.">
 </p>
 
 ## Desktop and Web
@@ -199,10 +222,15 @@ Your documents are not marketing data.
 - Document text, filenames, paths and search queries do not belong in product
   analytics.
 
-The application and its main functionality remain free on both Desktop and Web.
-This is not a trial. Optional paid additions may appear later. Accounts,
-synchronization and other online services are not available yet; if introduced,
-they may have separate pricing without changing the free-core promise.
+## Beta access and activation
+
+Beta participants will be able to leave their email address and receive an
+activation code for selected additional features at no charge. After beta, a base
+edition will be offered, with additional features unlocked by a paid activation key.
+Current prices will appear in the [Pricing section](https://yinkie.com/#pricing)
+once payments are connected. The features available without payment may change
+at the maintainer's discretion with each update, subject to the Terms of Use and
+applicable law.
 
 ## Feedback
 
@@ -255,3 +283,5 @@ and the [screenshot brief](docs/screenshots.md).
 intent using only in-memory page IDs and closed source/campaign categories. It is
 separate from application telemetry and download counters. Production sending
 is disabled until the dedicated receiver is ready.
+
+Current [Terms of Use](https://yinkie.com/legal/terms-v3.html) cover feature availability, local documents and user responsibilities.

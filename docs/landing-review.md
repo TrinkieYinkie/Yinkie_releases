@@ -11,9 +11,8 @@ by the v2 consent work on 2026-10-18. Original screenshot/product launch inputs 
 - AI-assisted Markdown is prominent in the first viewport and the first story
   section: ask for Markdown, open the .md file, revise it and organize context.
 - Multiple folders/documents are presented as a Desktop workspace capability.
-- Core functionality remains free on Desktop and Web; future extras may be paid.
-  Accounts/sync/online services are currently unavailable, without excluding
-  their future introduction.
+- Beta access and activation-key positioning supersedes the original pricing copy;
+  see [the October 25 follow-up](plans/demo-screenshots-and-licensing.md).
 - English, Russian and Spanish; light/dark semantic tokens, system preference,
   local explicit preferences, keyboard-operable buttons and native details.
 - Existing captures have accurate captions. Source-fragment and diagram images
@@ -39,7 +38,7 @@ the browser policy; no workaround was used.
 No browser interaction/resizing/screenshot QA is claimed for this new landing.
 
 ## Remaining launch inputs
-- Current light-theme, workspace and Source + Preview captures; see screenshots.md.
+- Supplied light/dark demo captures are integrated; see screenshots.md.
 - Actual release assets and domain activation. Do not invent installer names,
   versions, platform support, online services or licensing claims.
 - A final real-browser visual/accessibility review before public launch.
