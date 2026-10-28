@@ -5,12 +5,12 @@
 <h1 align="center">Yinkie</h1>
 
 <p align="center">
-  <strong>A calm visual Markdown editor for files that stay yours.</strong>
+  <strong>Edit Markdown visually. Save ordinary .md files.</strong>
 </p>
 
 <p align="center">
-  Write visually. Switch to source when you need precision.<br>
-  Keep clean, portable <code>.md</code> files — always.
+  Format headings, lists and tables visually. Switch to source for precise edits.<br>
+  Keep local <code>.md</code> files you can open in other editors.
 </p>
 
 <p align="center">
@@ -31,7 +31,7 @@
   <img src="./assets/screenshots/yinkie-writing-dark.webp" width="100%" alt="The City at Blue Hour essay in the Yinkie Desktop Visual editor, with the demo folder tree.">
 </p>
 
-## Markdown, without the markup getting in your way
+## Edit Markdown with visual formatting tools
 
 Yinkie gives ordinary Markdown documents a polished writing surface. There is
 no proprietary project format and no database between you and your words — just
@@ -69,7 +69,7 @@ copies of your text.
   </tr>
 </table>
 
-## A useful home for AI-assisted Markdown
+## Edit a Markdown draft from your AI assistant
 
 Ask your AI assistant for a plan, research summary or documentation in Markdown.
 Save the result as a .md file and open it in Yinkie to read, revise and keep it
@@ -79,7 +79,7 @@ one workspace, with tabs and two editor groups keeping references close at hand.
 AI generation happens in your chosen service. Yinkie works with the Markdown
 you bring into it.
 
-## One document, two ways to think
+## Edit source with a preview beside it
 
 Source is never treated as a lesser mode. Yinkie is designed to preserve
 Markdown it cannot safely edit visually instead of silently flattening or
@@ -95,8 +95,8 @@ and points back to the exact Source that owns it.
 Yinkie Desktop is made for people whose notes, documentation and writing live
 across real folders. Named workspaces can combine multiple roots and pinned
 files without moving them or imposing a project structure. Quick Open and
-workspace search help you move through a large collection without losing the
-calm writing surface.
+workspace search help you move through a large collection while keeping the
+current document open.
 
 Rich technical documents belong in that same workflow. Supported diagram
 fences render as bounded previews, while code remains readable and close to its

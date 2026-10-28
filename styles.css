@@ -269,15 +269,15 @@ details[open] .disclosure-icon { transform: rotate(45deg); }
   .hero-media::before, .editorial-media::before { display: none; }
 }
 
-.ai-section { border-bottom: 1px solid var(--line); }
-.ai-heading { max-width: 52rem; }
-.ai-heading h2 { margin-block: 1.2rem 1.4rem; }
-.ai-flow { display: grid; grid-template-columns: repeat(3,minmax(0,1fr)); list-style: none; padding: 0; margin-block: 2.8rem 1.8rem; gap: clamp(1.5rem,4vw,4rem); }
-.ai-flow li { display: flex; gap: 1rem; align-items: flex-start; border-top: 1px solid var(--line); padding-top: 1.5rem; }
-.ai-flow p { color: var(--muted); margin-top: .75rem; }
-.step-number { color: var(--accent); font-family: ui-monospace,monospace; font-size: .875rem; margin-top: .22rem; }
-.ai-note { color: var(--muted); max-width: 82ch; font-size: .875rem; }
-@media (max-width: 58rem) { .ai-flow { grid-template-columns: 1fr; gap: 1.5rem; } }
+.benefits-section { border-bottom: 1px solid var(--line); }
+.benefits-heading { max-width: 52rem; }
+.benefits-heading h2 { margin-block: 1.2rem 1.4rem; }
+.benefits-flow { display: grid; grid-template-columns: repeat(3,minmax(0,1fr)); list-style: none; padding: 0; margin-block: 2.8rem 1.8rem; gap: clamp(1.5rem,4vw,4rem); }
+.benefits-flow li { display: flex; gap: 1rem; align-items: flex-start; border-top: 1px solid var(--line); padding-top: 1.5rem; }
+.benefits-flow p { color: var(--muted); margin-top: .75rem; }
+.step-number { flex: none; white-space: nowrap; color: var(--accent); font-family: ui-monospace,monospace; font-size: .875rem; margin-top: .22rem; }
+.benefits-note { color: var(--muted); max-width: 82ch; font-size: .875rem; }
+@media (max-width: 58rem) { .benefits-flow { grid-template-columns: 1fr; gap: 1.5rem; } }
 
 .dialect-grid { display: grid; grid-template-columns: repeat(4,minmax(0,1fr)); gap: 1rem; }
 .dialect-card { background: var(--surface); border: 1px solid var(--line); border-top: .2rem solid var(--accent); border-radius: .7rem; padding: 1.5rem; }
@@ -326,3 +326,6 @@ details[open] .disclosure-icon { transform: rotate(45deg); }
 .screenshot-link picture { display: block; }
 .workspace-media { grid-column: 1 / -1; min-width: 0; }
 .workspace-media figcaption { color: var(--night-muted); }
+
+/* Secondary detail stays readable without competing with the section introduction. */
+.source-tools { color: var(--muted); margin-top: 1.1rem; }
